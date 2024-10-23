@@ -1,10 +1,12 @@
-Title:-
+##### SER594: Exploratory Data Munging and Visualization
+
+#Title:-
 Precision Play: Innovating MLB Performance Analysis Through Data Integration
 
-Author:-
+#Author:-
 Om Rajesh Chauhan
 
-Date:-
+#Date:-
 10/22/2024
 
 Basic Questions and Interpretable Records:-
