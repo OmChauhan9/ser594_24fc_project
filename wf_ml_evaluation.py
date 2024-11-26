@@ -112,7 +112,6 @@ def construct_alternative_models(X_train, y_train):
     }
 
     for name, model in models.items():
-        print(f"Training model: {name}")
         model.fit(X_train, y_train)  # Train the model
         
         # Define the path where the model will be saved
