@@ -30,9 +30,6 @@ def load_and_merge_data():
     # Perform any necessary preprocessing here (e.g., drop non-numeric columns, handle missing values)
     data = data.dropna()  # Example: drop rows with missing values
     
-    # You can inspect the columns and types to ensure they are as expected
-    print(data.dtypes)  # To see the data types of each column
-    
     return data
 
 def prepare_features(df):
