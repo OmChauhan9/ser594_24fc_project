@@ -8,7 +8,7 @@
 ### Record 1
 **Raw Data:** 
 * WAR (Actual): 8.3
-* OPS (Actual): 0.987
+* OBP (Actual): 0.408
 * SLG (Actual): 0.579
 
 Other Relevant Stats:
@@ -19,8 +19,7 @@ Other Relevant Stats:
 * Runs Batted In (RBI): 107
 * Stolen Bases: 14
 
-**Prediction Explanation:** Mookie Betts is known for the combination of contact, power, and defense. The high WAR represents his value both offensively and defensively. His batting average and power-39 HRs-drive his OPS, making him a well-rounded offensive player. The predicted WAR, OPS, and SLG should reflect these qualities. That should be reasonable if the model predicts similar or somewhat lower numbers, considering Betts' general performance, but any large deviation would have to be investigated as far as features are chosen that could not properly represent his full abilities.
-
+**Prediction Explanation:** Mookie Betts is a player who excels both offensively and defensively; that is why his WAR is very high. His 0.408 OBP indicates excellent plate discipline, meaning he generally reaches base frequently. The 0.579 SLG reflects his strong power hitting, with a total of 39 home runs hit. The model should predict values for WAR, OBP, and SLG close to these actual numbers. This would require further investigation into identifying what features are not fully capturing Betts' all-around skill set if there is a significant deviation.
 
 
 ### Record 2
@@ -36,29 +35,29 @@ Other Relevant Stats:
 * Batting Average (BA): 0.337
 * Stolen Bases: 73
 
-**Prediction Explanation:** Ronald Acuña Jr. had a season where the elite power-41 HR-was complemented by exceptional base-running skills, having swiped 73 SBs. The OPS and SLG should reflect the combo of speed and power, reflected in his high WAR. Model-predicted WAR, OPS, and SLG should be reflective of those contributions made. With the strong balance between power and speed for Acuña, he is considered a top-tier player, and the model should ideally predict values as close as possible to the actual numbers. Large deviations from the actual figures would need to be justified by analyzing which features are influencing the predictions.
+**Prediction Explanation:** Ronald Acuña Jr. had an outstanding season, combining elite power (41 home runs) with exceptional speed (73 stolen bases). His On-Base Percentage (OBP) of 0.416 indicates his ability to get on base frequently, while his Slugging Percentage (SLG) of 0.596 reflects his power-hitting prowess. The model’s predictions for WAR, OBP, and SLG should capture both his speed and power contributions. Large discrepancies between predicted and actual values would need analysis to determine which features may not have fully captured Acuña's unique skill set.
+
 
 ## Interesting Features
 ### Feature A
 **Feature:** Batting Average (BA)
 
-**Justification:** BA is a base offensive statistic that calculates how well players reach a base by hitting the ball. In general, a high BA-like 0.337 for Acuña and 0.307 for Betts-would have a good correlation with OPS and SLG because a player who continually hit would have high rates on-base and slugging percentages. At the same time, when speaking about WAR, a higher BA automatically increases the contribution made by a player to his team's success. We would thus anticipate that the model relies most heavily on BA when predicting OPS and WAR.
+**Justification:** BA is a fundamental offensive statistic that measures how well players hit to get on base. A high BA—like 0.337 for Acuña and 0.307 for Betts—often correlates with other important metrics like On-Base Percentage (OBP) and Slugging Percentage (SLG). Players with higher BA are likely to reach base more frequently, which directly contributes to their OBP. Additionally, since BA impacts a player's overall offensive production, a higher BA will also influence a player’s WAR, reflecting their overall contribution to team success. Therefore, we expect the model to rely heavily on BA when predicting OBP and WAR.
 
 ### Feature B
 **Feature:** Home Runs (HR)
 
-**Justification:** Home Runs are a major contributor to the player's slugging percentage, SLG, which directly contributes to OPS. A player with a high number of HRs, like Acuña with 41 and Betts with 39, has more power and results in higher run production, thus giving way to a higher SLG and WAR. The model should consider HR as a robust indicator of offensive output, especially for predictions concerning SLG and OPS.
+**Justification:** Home Runs are a significant factor in a player’s Slugging Percentage (SLG), as they represent the highest value hit a player can achieve. For players like Acuña (41 HR) and Betts (39 HR), HRs are key drivers of offensive production and influence their SLG and WAR. A high HR count also helps improve a player's ability to score or drive in runs, thus boosting their contribution to the team's overall success. The model should treat HR as a key indicator for predicting SLG and, to a lesser extent, OBP, while playing a crucial role in predicting overall offensive output reflected in WAR.
 
 ## Experiments 
 ### Varying A (Batting Average)
-**Prediction Trend Seen:** With an increase in Batting Average (BA), we find that the model produces greater values for both OPS and WAR. This is as we'd expect, since BA should tell us how often a player manages to get on base consistently, thereby contributing towards the offensive production of his team. The model's prediction seems to align with this, showing a positive relationship between BA and the target metrics.
+**Prediction Trend Seen:** With an increase in Batting Average (BA), the model predicts greater values for both OBP and WAR. This makes sense, as BA directly affects how often a player gets on base, which in turn influences OBP. A higher OBP means the player is contributing significantly to the team’s offensive success. The model accurately captures this relationship, showing a positive correlation between BA and the target metrics (OBP and WAR).
 
 ### Varying B (Home Runs)
-**Prediction Trend Seen:** If Home Runs (HR) are increased, the model predicts a steep rise in SLG, and by extension, OPS. This makes intuitive sense, since HRs are, by far and away, the largest contributor to SLG. WAR also rises slightly, given the correlation between power hitting and overall contribution to the team. The model uses HR as an important factor for predicting SLG and OPS.
+**Prediction Trend Seen:** It increases the SLG, with great increments in a manner expected from a higher-scoring hit type like HRs. Correspondingly, it increases in terms of power production toward higher WARs since power hitters are normally very valuable toward team outcomes. SLG and WAR increase, accordingly, in accordance with the role that home runs have as leading indicators of offensive impact.
 
 ### Varying A and B together
-**Prediction Trend Seen:** The model would predict that when BA and HR are increased together, there will be even stronger increases in OPS and WAR. Players with both a high BA and high HR are few but very valuable; this is because they can both reach base consistently and hit for power. This synergy ensures that the overall offensive contributions become higher, and the model reproduces such a dynamic rather well by predicting that players with high values in both metrics will have superior overall performance.
-
+**Prediction Trend Seen:** When both Batting Average (BA) and Home Runs (HR) increase, the model predicts a significant rise in both OBP, SLG, and WAR. Players who excel in both areas (high BA and high HR) are rare but extremely valuable because they combine consistent hitting with power. The model accurately reflects this synergy, predicting that players with high values in both metrics will have outstanding overall offensive performance and team contributions.
 
 ### Varying A and B inversely
-**Prediction Trend Seen:** When BA and HR are opposites, the model predicts players with a high BA but lower HR will have a higher OPS than players with a low BA but high HR. In terms of WAR, though, the high-HR/low-BA players might still contribute a great deal because power hitters tend to drive in more runs. The model correctly reflects this trade-off, yet a marked depreciation of predicted values occurs for those players who are only good at one of the skills.
+**Prediction Trend Seen:** When BA and HR vary inversely (e.g., high BA but low HR or vice versa), the model predicts that players with a high BA but fewer HRs will have a higher OBP compared to those with a low BA but many HRs. However, power hitters with a lower BA but more HRs may still contribute significantly to SLG and WAR because HRs provide substantial run production. The model captures this trade-off, but there is a clear reduction in predicted values for players excelling in only one of these areas (either BA or HR), rather than both.

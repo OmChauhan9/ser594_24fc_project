@@ -69,10 +69,10 @@ coefficients. This model works to avoid multicollinearity, not allowing overfitt
 In this model, the choice of alpha used was 0.1, which somehow creates a balance between model regularization and 
 accuracy.
 
-* MSE:  0.1082,
-* R²: 0.9633,
-* RMSE: 0.3290,
-* MAE:  0.1436,
+* MSE:  0.1060,
+* R²: 0.9411,
+* RMSE: 0.3255,
+* MAE:  0.1457,
 
 ### Alternative 2
 **Construction:** Lasso Regression (alpha = 0.1)
@@ -82,20 +82,30 @@ therefore, feature selection is performed in the process. The reason Lasso was c
 complexity by eliminating less relevant features. With an alpha value of 0.1, this model allows regularization to be 
 controlled while still offering a good fit to the data.
 
-* MSE:  0.1886,
-* R²: 0.6034,
-* RMSE: 0.4343,
-* MAE:  0.2278,
+* MSE:  0.1862,
+* R²: 0.3714,
+* RMSE: 0.4315,
+* MAE:  0.2193,
 
 ### Alternative 3
 **Construction:** K-Nearest Neighbors (K = 3)
 
 **Evaluation:** K-Nearest Neighbors is a non-parametric, lazy learning algorithm that predicts the output by finding the K-nearest data points in the feature space. Here, K equals 3, so it makes a prediction based on the 3 nearest data points. While it can be very powerful for capturing complex relationships, K-Nearest Neighbors usually performs poorly with high-dimensional data and may have a hard time dealing with big datasets because of its high computational complexity.
 
-* MSE:  0.1939
-* R²: 0.9110
-* RMSE: 0.4404  
-* MAE:  0.1908
+* MSE:  0.2005
+* R²: 0.8700
+* RMSE: 0.4478  
+* MAE:  0.1903
+
+### Alternative 3
+**Construction:** K-Nearest Neighbors (K = 10)
+
+**Evaluation:** K-Nearest Neighbors is a non-parametric, lazy learning algorithm that predicts the output by finding the K-nearest data points in the feature space. Here, K equals 10, so it makes a prediction based on the 10 nearest data points. While it can be very powerful for capturing complex relationships, K-Nearest Neighbors usually performs poorly with high-dimensional data and may have a hard time dealing with big datasets because of its high computational complexity.
+
+* MSE:  0.1656
+* R²: 0.8804
+* RMSE: 0.4069
+* MAE:  0.1784
 
 
 ## Best Model

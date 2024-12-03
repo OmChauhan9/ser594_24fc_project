@@ -38,8 +38,8 @@ def prepare_features(df):
     df = df.select_dtypes(include=[np.number])  # Only keep numeric columns
     
     # Select features and target variable
-    X = df.drop(columns=['WAR', 'OPS', 'SLG'])  # Features (predictors)
-    y = df[['WAR', 'OPS', 'SLG']]  # Target variable (to predict WAR, OPS, and SLG)
+    X = df.drop(columns=['WAR', 'OBP', 'SLG'])  # Features (predictors)
+    y = df[['WAR', 'OBP', 'SLG']]  # Target variable (to predict WAR, OBP, and SLG)
 
     return X,y
 
